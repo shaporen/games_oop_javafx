@@ -50,7 +50,8 @@ class BishopBlackTest {
         BishopBlack bishopBlack = new BishopBlack(first);
         Cell second = Cell.G1;
         Cell[] result = bishopBlack.way(second);
-        assertThat(result).containsExactly(new Cell[]{Cell.B6, Cell.C5, Cell.D4, Cell.E3, Cell.F2, Cell.G1});
+        assertThat(result).containsExactly(new Cell[]{Cell.B6, Cell.C5,
+                Cell.D4, Cell.E3, Cell.F2, Cell.G1});
     }
 
     @Test
@@ -59,7 +60,7 @@ class BishopBlackTest {
         BishopBlack bishopBlack = new BishopBlack(first);
         Cell second = Cell.F1;
         ImpossibleMoveException exception = assertThrows(
-            ImpossibleMoveException.class,() -> bishopBlack.way(second)
+            ImpossibleMoveException.class, () -> bishopBlack.way(second)
         );
         assertThat(exception.getMessage()).isEqualTo(
                 "Could not way by diagonal from %s to %s", first, second);
